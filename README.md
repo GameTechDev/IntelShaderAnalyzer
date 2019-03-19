@@ -7,7 +7,7 @@ Intel Shader Analyzer uses a dedicated driver API to compile and disassemble sha
         * igc32.dll
         * iga32.dll
         * IntelGPUCompiler32.dll
-    * For 64-bit:
+   * For 64-bit:
         * igc64.dll
         * iga64.dll
         * IntelGPUCompiler64.dll
