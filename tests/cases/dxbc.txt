@@ -1,0 +1,24 @@
+
+  # DX11
+  @DO     $EXE$ -s dxbc --api dx11 $DIR$/data/ps50.dxbc
+
+  ##############
+  # DX12-dxbc
+  ##############
+
+  @DO $EXE$ -s dxbc --api dx12 $DIR$/data/ps50.dxbc --rootsig_file $DIR$/data/testrootsig
+  @DO $EXE$ -s dxbc --api dx12 $DIR$/data/ps50_with_rs.dxbc
+
+  # missing root-sig
+  @DO_FAIL     $EXE$ -s dxbc --api dx12 $DIR$/data/ps50.dxbc
+
+  ##############
+  # DX12-dxil
+  ##############
+  @DO $EXE$ -s dxbc --api dx12 $DIR$/data/ps60.dxbc --rootsig_file $DIR$/data/testrootsig
+  @DO $EXE$ -s dxbc --api dx12 $DIR$/data/ps60_with_rs.dxbc
+  
+  # missing root-sig
+  @DO_FAIL     $EXE$ -s dxbc --api dx12 $DIR$/data/ps60.dxbc
+
+  @DO rm -rf *.asm

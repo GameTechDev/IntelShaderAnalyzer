@@ -1,0 +1,36 @@
+/*
+  @DO $EXE$ -h
+  @DO_FAIL $EXE$ 
+  @DO_FAIL $EXE$ --bogus_option
+  @DO_FAIL $EXE$ -bogus_option
+  @DO $EXE$ -l
+  @DO $EXE$ --list-asics
+  @DO_FAIL    $EXE$ -s bogus_lang --api dx11 $PATH$ 
+  @DO_FAIL    $EXE$ -s dxbc --api bogus_api $PATH$
+  @DO_FAIL    $EXE$ -s
+  @DO_FAIL    $EXE$ --api
+  @DO_FAIL    $EXE$ -p
+  @DO_FAIL    $EXE$ -c
+  @DO_FAIL    $EXE$ --rootsig_profile
+  @DO_FAIL    $EXE$ --rootsig_macro
+  @DO_FAIL    $EXE$ -s dxbc--api dx12 -D
+  @DO_FAIL    $EXE$ -s dxbc --api dx11 bad_filename
+  @DO_FAIL    $EXE$ -s hlsl --api dx11 bad_filename
+  @DO_FAIL    $EXE$ -s dxbc --api dx12 bad_filename
+  @DO_FAIL    $EXE$ -s dxbc --api dx12 bad_filename
+  @DO_FAIL    $EXE$ -s hlsl --api dx11 $PATH$
+  @DO_FAIL    $EXE$ -s dxbc --api dx11 $PATH$
+
+
+  @DO $EXE$ -s hlsl --api dx11 -p cs_5_0 -c Skylake --isa myext_ $PATH$
+  @DO cat myext_Skylake.asm
+  @DO rm myext_Skylake.asm
+
+  @END
+
+*/
+
+[numthreads(64,1,1)]
+void main()
+{
+}

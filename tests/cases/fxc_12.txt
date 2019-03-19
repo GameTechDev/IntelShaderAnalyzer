@@ -1,0 +1,46 @@
+/*
+  # no root signature
+  @DO_FAIL     $EXE$ -s hlsl --api dx12 -f NoRootSig -p ps_5_0 $PATH$
+
+  # root-sig file missing
+  @DO_FAIL     $EXE$ -s hlsl --api dx12 -f NoRootSig -p ps_5_0 $PATH$ --rootsig_file $DIR$/data/testrootsig_missing
+
+  # root-sig from file
+  @DO     $EXE$ -s hlsl --api dx12 -f NoRootSig -p ps_5_0 $PATH$ --rootsig_file $DIR$/data/testrootsig
+
+  # root-sig from HLSL attribute
+  @DO     $EXE$ -s hlsl --api dx12 -f HasRootSig -p ps_5_0 $PATH$ 
+
+  ########################################
+  # two-pass compilation 
+  ########################################
+
+  # bad macro name
+  @DO_FAIL     $EXE$ -s hlsl --api dx12 -f NoRootSig -p ps_5_0 $PATH$ --rootsig_macro bogus_macro
+
+  # missing macro name
+  @DO_FAIL     $EXE$ -s hlsl --api dx12 -f NoRootSig -p ps_5_0 $PATH$ --rootsig_profile rootsig_1_0
+
+  # bad profile
+  @DO_FAIL     $EXE$ -s hlsl --api dx12 -f NoRootSig -p ps_5_0 $PATH$ --rootsig_profile bad
+  
+  # success case
+  @DO     $EXE$ -s hlsl --api dx12 -f NoRootSig -p ps_5_0 $PATH$ --rootsig_macro MyRS
+
+  @DO rm -rf *.asm
+
+  @END
+*/
+
+#define MyRS "SRV(t0)"
+
+[RootSignature(MyRS)]
+float4 HasRootSig() : SV_Target
+{
+   return 0;
+}
+
+float4 NoRootSig( ) : SV_Target
+{	
+   return 0;
+}

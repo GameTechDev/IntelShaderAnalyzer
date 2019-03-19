@@ -1,0 +1,20 @@
+/*
+   @DO_FAIL $EXE$ -s hlsl -p cs_5_0 $PATH$
+   @DO_FAIL $EXE$ -s hlsl -p cs_5_0 -D FOO=baz $PATH$
+   @DO_FAIL $EXE$ -s hlsl -p cs_5_0 -D FOO=bar $PATH$
+   @DO $EXE$ -s hlsl -p cs_5_0 -D FOO=bar -D BAR=42 $PATH$
+   @DO rm -rf *.asm
+*/
+
+#ifndef FOO
+#error "Missing foo"
+#endif
+
+RWByteAddressBuffer buff;
+
+[numthreads(64,1,1)]
+void main()
+{
+   int bar = 0;
+   buff.Store(0, FOO + BAR + 5 );
+}

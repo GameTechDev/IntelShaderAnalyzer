@@ -1,0 +1,13 @@
+/*
+  @DO      $EXE$ -s hlsl --api dx11 -f Foo -p ps_5_0 $PATH$
+  @DO_FAIL $EXE$ -s hlsl --api dx11 -f Bar -p ps_5_0 $PATH$
+  @DO_FAIL $EXE$ -s hlsl --api dx12 -f Foo -p ps_5_0 $PATH$
+  @DO_FAIL $EXE$ -s hlsl --api dx11 -p ps_5_0 -c Skylake --isa ISA_ --DXLocation foo.dll $PATH$
+  @DO rm -rf *.asm
+  @END
+*/
+
+float4 Foo( ) : SV_Target
+{	
+   return 0;
+}
