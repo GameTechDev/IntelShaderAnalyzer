@@ -1,6 +1,6 @@
 
 ## Intel Shader Analyzer
-Intel Shader Analyzer is a tool for offline static analysis of shaders.  It allows a user to compile dxbc or HLSL code and inspect the generated code for either DX11 and DX12.   
+Intel Shader Analyzer is a tool for offline static analysis of shaders for Intel GPU Architectures.  It allows a user to compile dxbc or HLSL code and inspect the generated GPU ISA for either DX11 and DX12.   
 
 Intel Shader Analyzer uses a dedicated driver API to compile and disassemble shaders, and may be run on any Windows 10 machine.  It depends on the following graphics driver components:
    * For 32-bit:
