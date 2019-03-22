@@ -17,7 +17,11 @@ In the initial release, these driver components are bundled with the release exe
 
 Besides being a functional tool, Intel Shader Analyzer is also intended to serve as a working refrence for the use of the driver compilation API, so that others may incorporate into their own tool chains as appropriate.
 
-## GEN ISA Documentation
+## Related Links
+
+The following third-party tools integrate IntelShaderAnalyzer and provide GUIs:
+* [Pyramid](https://github.com/jbarczak/pyramid)
+* [Shader Playground](http://shader-playground.timjones.io/)
 
 Below are some overviews and articles which introduce the ISA and architecture:
 * [Intel Graphics ISA (micro 2016)](https://software.intel.com/sites/default/files/managed/89/92/micro-2016-ISA-tutorial.pdf)
