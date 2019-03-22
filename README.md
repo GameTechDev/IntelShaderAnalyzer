@@ -19,9 +19,10 @@ Besides being a functional tool, Intel Shader Analyzer is also intended to serve
 
 ## GEN ISA Documentation
 
-Below are some overviews and articles which introduce the ISA:
+Below are some overviews and articles which introduce the ISA and architecture:
 * [Intel Graphics ISA (micro 2016)](https://software.intel.com/sites/default/files/managed/89/92/micro-2016-ISA-tutorial.pdf)
 * [Introduction to Gen Assembly](https://software.intel.com/en-us/articles/introduction-to-gen-assembly)
+* [Gen11 Architecture Whitepaper](https://software.intel.com/sites/default/files/managed/db/88/The-Architecture-of-Intel-Processor-Graphics-Gen11_R1new.pdf)
 
 Detailed ISA documentation can be found in the PRMs:
 * [Skylake](https://01.org/sites/default/files/documentation/intel-gfx-prm-osrc-skl-vol07-3d_media_gpgpu.pdf)
