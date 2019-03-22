@@ -17,6 +17,17 @@ In the initial release, these driver components are bundled with the release exe
 
 Besides being a functional tool, Intel Shader Analyzer is also intended to serve as a working refrence for the use of the driver compilation API, so that others may incorporate into their own tool chains as appropriate.
 
+## GEN ISA Documentation
+
+Below are some overviews and articles which introduce the ISA:
+* [Intel Graphics ISA (micro 2016)](https://software.intel.com/sites/default/files/managed/89/92/micro-2016-ISA-tutorial.pdf)
+* [Introduction to Gen Assembly](https://software.intel.com/en-us/articles/introduction-to-gen-assembly)
+
+Detailed ISA documentation can be found in the PRMs:
+* [Skylake](https://01.org/sites/default/files/documentation/intel-gfx-prm-osrc-skl-vol07-3d_media_gpgpu.pdf)
+* [KabyLake](https://01.org/sites/default/files/documentation/intel-gfx-prm-osrc-kbl-vol07-3d_media_gpgpu.pdf)
+
+
 ## Usage
 
 Intel Shader Analyzer can consume HLSL input or DX bytecode, and pass them for compilation to either the DX11 or DX12 compilers.  Currently, HLSL is only supported for shader model 5 shaders.  
